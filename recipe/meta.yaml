@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/CCOMJHC/WIBL/archive/refs/tags/{{ name }}-{{ version }}.tar.gz
-  sha256: 1368b0ad592c8b203466169b1711d338b30186e3cb8fc5f081c19b6688fc9ec4
+  sha256: 124373ba5e35bf18b5b8d074c771808befe7fc6a213bad695c6f26bcca44f4e8
 
 build:
   entry_points:
@@ -17,7 +17,7 @@ build:
   script: |
     {{ PYTHON }} -m pip install ./wibl-python/wibl-manager
     {{ PYTHON }} -m pip install ./wibl-python -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -45,6 +45,7 @@ test:
     - pip
   commands:
     - pip check
+    - wibl --help
 
 about:
   home: https://github.com/CCOMJHC/WIBL/tree/wibl-python-1.0.3/wibl-python
